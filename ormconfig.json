@@ -2,19 +2,19 @@
    "type": "postgres",
    "host": "localhost",
    "port": 5432,
-   "username": "test",
-   "password": "test",
-   "database": "test",
+   "username": "postgres",
+   "password": "postgres",
+   "database": "codeponder",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "src/entity/**/*.ts"
+      "src/entity/**/*.*"
    ],
    "migrations": [
-      "src/migration/**/*.ts"
+      "src/migration/**/*.*"
    ],
    "subscribers": [
-      "src/subscriber/**/*.ts"
+      "src/subscriber/**/*.*"
    ],
    "cli": {
       "entitiesDir": "src/entity",
