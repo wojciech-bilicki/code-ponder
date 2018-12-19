@@ -1,8 +1,9 @@
 import * as argon from 'argon2';
-import Yup from 'yup';
+import { registerSchema } from '@codeponder/common'
 
 import { MutationResolvers } from "../../../types";
 import { User } from '../../../entity/User';
+import { formatYupError } from '../../../utils/formatYupErrors';
 
 export const resolvers: MutationResolvers.Resolvers = {
   register: async (_, { input }) => {
@@ -12,9 +13,18 @@ export const resolvers: MutationResolvers.Resolvers = {
       }
     }
 
+    try {
+      await registerSchema.validate(input, { abortEarly: false })
+    } catch (err) {
+      return {
+        errors: formatYupError(err)
+      }
+    }
+
     const { password, email, username } = input;
 
     const hashedPassword = await argon.hash(password)
+
     try {
       await User.create({
         email,

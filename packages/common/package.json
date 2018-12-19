@@ -1,0 +1,17 @@
+{
+  "name": "@codeponder/common",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "typings": "dist/index.d.ts",
+  "devDependencies": {
+    "@types/yup": "^0.26.3",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "yup": "^0.26.6"
+  },
+  "scripts": {
+    "build": "tsc"
+  }
+}

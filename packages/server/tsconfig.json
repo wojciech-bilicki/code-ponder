@@ -11,6 +11,7 @@
       "sourceMap": true,
       "outDir": "./dist",
       "moduleResolution": "node",
+      "composite": true,
       "removeComments": true,
       "noImplicitAny": true,
       "strictNullChecks": true,
@@ -23,7 +24,7 @@
       "allowSyntheticDefaultImports": false,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "baseUrl": "..",
+      "baseUrl": ".."
    },
    "exclude": [
       "node_modules"
@@ -31,5 +32,10 @@
    "include": [
       "./src/**/*.tsx",
       "./src/**/*.ts"
+   ],
+   "references": [
+      {
+         "path": "../common"
+      }
    ]
 }
